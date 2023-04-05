@@ -44,7 +44,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 # ALLOWED_HOSTS = ['*', 'http://127.0.0.1:8000']
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
                           "127.0.0.1,localhost").split(",")
-# CSRF_TRUSTED_ORIGINS = ['https://osbh-gfjw3.ondigitalocean.app']
+CSRF_TRUSTED_ORIGINS = ['https://osbh-gfjw3.ondigitalocean.app']
 
 # Application definition
 
