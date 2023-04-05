@@ -44,7 +44,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 # ALLOWED_HOSTS = ['*', 'http://127.0.0.1:8000']
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
                           "127.0.0.1,localhost").split(",")
-# CSRF_TRUSTED_ORIGINS = ['https://ea6f-197-210-28-38.ngrok.io']
+# CSRF_TRUSTED_ORIGINS = ['https://osbh-gfjw3.ondigitalocean.app']
 
 # Application definition
 
@@ -61,9 +61,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.twitter',
+    # 'allauth.socialaccount.providers.twitter',
 
     "crispy_forms",
     "crispy_bootstrap5",

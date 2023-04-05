@@ -56,7 +56,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-            <a href="{% url 'account_login' %}?next={{request.path}}" class="btn btn-primary btn-block">Login to comment</a>
+            <a href="{% url 'account_login' %}?next={{request.path}}" class="btn btn-info btn-block">Login to comment</a>
             {% endif %}
         </div>
     </div>
