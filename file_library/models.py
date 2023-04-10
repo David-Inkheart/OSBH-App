@@ -25,8 +25,8 @@ class FileUploader(models.Model):
 
 class File(models.Model):
     """Model representing a file"""
-    title = models.CharField(max_length=100)
-    author = models.CharField(max_length=100)
+    title = models.CharField(max_length=150)
+    author = models.CharField(max_length=150)
     pdf = models.FileField(upload_to='files/pdfs/')
     cover = models.ImageField(upload_to='files/covers/', null=True,
                               blank=True, default='files/covers/default.jpg')

@@ -38,21 +38,15 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-# DEBUG = os.getenv("DEBUG", "False") == "True"
-
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
 # ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['*', 'http://127.0.0.1:8000']
-# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
-#                          "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
+                          "127.0.0.1,localhost").split(",")
 CSRF_TRUSTED_ORIGINS = ['https://osbh-app-cxg9t.ondigitalocean.app/']
 
-ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
-ALLOWED_HOSTS = []
-if ENV_ALLOWED_HOST is not None:
-    ALLOWED_HOSTS = [ENV_ALLOWED_HOST]
 
 # Application definition
 
@@ -85,7 +79,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -107,6 +100,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -189,7 +183,7 @@ MEDIA_URL = '/media/'
 # ]
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
